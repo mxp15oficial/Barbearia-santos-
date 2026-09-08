@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Barbearia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <div class="app-header">
+      <span class="logo">Barbearia Santos</span>
+      <button id="btnMeusAgendamentos" class="btn-meus-agendamentos">MEUS AGENDAMENTOS</button>
+    </div>
+
+    <!-- TELA 1: LOGIN -->
+    <div id="telaLogin" class="card-section">
+      <h2>Boas-vindas!</h2>
+      <p class="subtitle">Informe seus dados para acessar a agenda:</p>
+      
+      <div class="field">
+        <label for="clienteNome">Seu Nome:</label>
+        <input type="text" id="clienteNome" placeholder="Ex: Maxuel">
+      </div>
+
+      <div class="field">
+        <label for="clienteTelefone">Seu Telefone/WhatsApp:</label>
+        <input type="tel" id="clienteTelefone" placeholder="(67) 99999-9999" maxlength="15">
+      </div>
+
+      <button id="btnEntrar" class="btn-primary">Acessar Agenda</button>
+    </div>
+
+    <!-- TELA 2: FLUXO DE AGENDAMENTO -->
+    <div id="telaAgendamento" class="card-section hidden">
+      <div class="saudacao-box">
+        <h2 id="textoSaudacao">Como vai!</h2>
+        <p>Siga os passos abaixo para agendar seu horário:</p>
+      </div>
+
+      <!-- Passo 1: Calendário e Hora -->
+      <div class="step-box">
+        <h3>1. Escolha a Data e Horário</h3>
+        <div class="field">
+          <label for="dataAgendamento">Data (até 2027):</label>
+          <input type="date" id="dataAgendamento">
+        </div>
+        <div class="field">
+          <label for="horaAgendamento">Horário do Corte:</label>
+          <input type="time" id="horaAgendamento" value="09:00">
+        </div>
+      </div>
+
+      <!-- Passo 2: Escolha do Barbeiro -->
+      <div class="step-box">
+        <h3>2. Escolha o Barbeiro</h3>
+        <select id="selectBarbeiro">
+          <option value="Santos 💈" data-id="santos1">Santos 💈 (Profissional)</option>
+          <option value="Santos 🪮" data-id="santos2">Santos 🪮 (Especialista)</option>
+        </select>
+      </div>
+
+      <!-- Passo 3: Escolha do Corte (Grade 2x2 com Preços do Barbeiro) -->
+      <div class="step-box">
+        <h3>3. Escolha o Corte de Cabelo</h3>
+        <div id="gridCortes" class="grid-cortes">
+          <!-- Os cards de cortes serão carregados dinamicamente via JS com os preços do barbeiro selecionado -->
+        </div>
+      </div>
+
+      <button id="btnFinalizar" class="btn-success">Finalizar Agendamento ⏰</button>
+      <div id="mensagem"></div>
+    </div>
+
+  </div>
+
+  <!-- MODAL: MEUS AGENDAMENTOS E CANCELAMENTO -->
+  <div id="modalMeusAgendamentos" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Meus Agendamentos</h2>
+        <span id="btnFecharMeusAgendamentos" class="close">&times;</span>
+      </div>
+      <div id="listaAgendamentos" class="lista-agendamentos"></div>
+    </div>
+  </div>
+
+  <!-- Som de Alarme -->
+  <audio id="somAlarme" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
