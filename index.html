@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Barbearia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Topo / Cabeçalho -->
+    <div class="app-header">
+      <span class="logo">Barbearia Santos</span>
+      <button id="btnMeusAgendamentos" class="btn-meus-agendamentos">MEUS AGENDAMENTOS</button>
+    </div>
+
+    <!-- Tela 1: Identificação do Cliente -->
+    <div id="telaLogin" class="card-section">
+      <h2>Boas-vindas!</h2>
+      <p class="subtitle">Informe seus dados para acessar a agenda:</p>
+      
+      <div class="field">
+        <label for="clienteNome">Seu Nome:</label>
+        <input type="text" id="clienteNome" placeholder="Ex: Maxuel Correia">
+      </div>
+
+      <div class="field">
+        <label for="clienteTelefone">Seu Telefone/WhatsApp:</label>
+        <input type="tel" id="clienteTelefone" placeholder="(00) 00000-0000" maxlength="15">
+      </div>
+
+      <button id="btnEntrar" class="btn-primary">Acessar Agenda</button>
+    </div>
+
+    <!-- Tela 2: Agenda e Agendamento -->
+    <div id="telaAgendamento" class="card-section hidden">
+      <div class="saudacao-box">
+        <h2 id="textoSaudacao">Como vai!</h2>
+        <p>Por qual serviço você está procurando hoje?</p>
+      </div>
+
+      <!-- Seleção de Data e Barbeiro -->
+      <div class="field">
+        <label for="data">Escolha a Data:</label>
+        <input type="date" id="data">
+      </div>
+
+      <div class="field">
+        <label for="selectBarbeiro">Barbeiro:</label>
+        <select id="selectBarbeiro">
+          <option value="Santos">Santos (Dono)</option>
+          <option value="" disabled>-- Vaga para Barbeiro --</option>
+        </select>
+      </div>
+
+      <button id="btnVerificar" class="btn-primary">Verificar Disponibilidade</button>
+
+      <!-- Grade 2x2 com os cortes e valores -->
+      <div id="areaServicos" class="hidden">
+        <h3>Selecione o Serviço:</h3>
+        
+        <div class="grid-cortes">
+          
+          <!-- Card 1 -->
+          <div class="card-corte" data-corte="Degradê Normal" data-preco="45.00" data-tempo="40min">
+            <div class="img-box">
+              <img src="https://via.placeholder.com/150?text=Degrade+Normal" alt="Degradê Normal">
+            </div>
+            <div class="card-info">
+              <p class="nome-corte">Degradê Normal</p>
+              <div class="detalhes">
+                <span class="preco">R$ 45,00</span>
+                <span class="tempo">40min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-corte" data-corte="Degradê Navalhado" data-preco="50.00" data-tempo="45min">
+            <div class="img-box">
+              <img src="https://via.placeholder.com/150?text=Degrade+Navalhado" alt="Degradê Navalhado">
+            </div>
+            <div class="card-info">
+              <p class="nome-corte">Degradê Navalhado</p>
+              <div class="detalhes">
+                <span class="preco">R$ 50,00</span>
+                <span class="tempo">45min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-corte" data-corte="Designer de Barba" data-preco="30.00" data-tempo="25min">
+            <div class="img-box">
+              <img src="https://via.placeholder.com/150?text=Barba" alt="Designer de Barba">
+            </div>
+            <div class="card-info">
+              <p class="nome-corte">Designer de Barba</p>
+              <div class="detalhes">
+                <span class="preco">R$ 30,00</span>
+                <span class="tempo">25min</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card-corte" data-corte="Degradê + Barba" data-preco="70.00" data-tempo="55min">
+            <div class="img-box">
+              <img src="https://via.placeholder.com/150?text=Corte+Barba" alt="Degradê + Barba">
+            </div>
+            <div class="card-info">
+              <p class="nome-corte">Degradê + Barba</p>
+              <div class="detalhes">
+                <span class="preco">R$ 70,00</span>
+                <span class="tempo">55min</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button id="btnConfirmar" class="btn-success">Confirmar Agendamento</button>
+      </div>
+
+      <div id="mensagem"></div>
+    </div>
+
+  </div>
+
+  <!-- Modal "Meus Agendamentos" -->
+  <div id="modalMeusAgendamentos" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Meus Agendamentos</h2>
+        <span id="btnFecharMeusAgendamentos" class="close">&times;</span>
+      </div>
+      <div id="listaAgendamentos" class="lista-agendamentos">
+        <p class="empty-msg">Você não possui agendamentos em aberto.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+  
