@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+}
+
+button {
+  background-color: #d97706;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-corte {
+  background-color: #2563eb;
+}
+
+.btn-confirmar {
+  background-color: #16a34a;
+}
+
+.resumo-valor {
+  background-color: #2a2a2a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+/* Modal e Grade 2x2 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  width: 92%;
+  max-width: 400px;
+  max-height: 85vh;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close {
+  font-size: 28px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+/* Duas colunas lado a lado */
+.grid-cortes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+}
+
+.card-corte {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.card-corte:hover {
+  border-color: #d97706;
+}
+
+.img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nome-corte {
+  margin: 6px 0 2px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.preco-corte {
+  margin: 0;
+  font-size: 13px;
+  color: #4ade80;
+  font-weight: bold;
+}
