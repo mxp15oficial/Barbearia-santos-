@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Barbearia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Agendar Horário</h1>
+    
+    <!-- 1. Seleção de Data -->
+    <div class="field">
+      <label for="data">Escolha a data:</label>
+      <input type="date" id="data">
+    </div>
+
+    <button id="btnVerificar">Verificar Disponibilidade</button>
+
+    <!-- 2. Opções de Agendamento (Liberado se houver vaga) -->
+    <div id="areaAgendamento" class="hidden">
+      <h3>Escolha o Cabeleireiro:</h3>
+      <select id="selectBarbeiro">
+        <option value="Santos">Santos (Dono)</option>
+        <option value="" disabled>-- Outro Barbeiro --</option>
+      </select>
+
+      <h3>Escolha a Categoria:</h3>
+      <select id="selectCategoria">
+        <option value="cabelo_barba">Corte e Barba</option>
+        <option value="corte_simples">Corte Simples</option>
+        <option value="so_barba">Só Barba</option>
+      </select>
+      
+      <h3>Estilo do Corte:</h3>
+      <!-- Botão para abrir a grade de fotos -->
+      <button type="button" id="btnAbrirCortes" class="btn-corte">
+        <span id="textoCorteSelecionado">Clique para Escolher o Estilo e Ver Valores</span>
+      </button>
+
+      <!-- Exibição do Valor Total -->
+      <div id="resumoValor" class="resumo-valor hidden">
+        Valor do Agendamento: <span id="valorTotal">R$ 0,00</span>
+      </div>
+
+      <button id="btnConfirmar" class="btn-confirmar">Confirmar Agendamento</button>
+    </div>
+
+    <div id="mensagem"></div>
+  </div>
+
+  <!-- Modal / Tela do Catálogo Visual em Duplas (2x2) -->
+  <div id="modalCortes" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Escolha o Corte/Estilo</h2>
+        <span id="btnFecharModal" class="close">&times;</span>
+      </div>
+      
+      <div class="grid-cortes">
+        
+        <!-- LINHA 1: DEGRADÊS DE TOPO -->
+        <div class="card-corte" data-corte="Degradê no Zero / Navalhado" data-preco="35.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Degrade+Navalhado" alt="Degradê Navalhado">
+          </div>
+          <p class="nome-corte">Degradê Navalhado</p>
+          <p class="preco-corte">R$ 35,00</p>
+        </div>
+
+        <div class="card-corte" data-corte="Degradê Normal" data-preco="30.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Degrade+Normal" alt="Degradê Normal">
+          </div>
+          <p class="nome-corte">Degradê Normal</p>
+          <p class="preco-corte">R$ 30,00</p>
+        </div>
+
+        <!-- LINHA 2: ESTILOS DE BARBA -->
+        <div class="card-corte" data-corte="Barba Modelada" data-preco="20.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Barba+Modelada" alt="Barba Modelada">
+          </div>
+          <p class="nome-corte">Barba Modelada</p>
+          <p class="preco-corte">R$ 20,00</p>
+        </div>
+
+        <div class="card-corte" data-corte="Barba Terapia" data-preco="25.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Barba+Terapia" alt="Barba Terapia">
+          </div>
+          <p class="nome-corte">Barba Terapia</p>
+          <p class="preco-corte">R$ 25,00</p>
+        </div>
+
+        <!-- LINHA 3: OUTROS ESTILOS DE CABELO -->
+        <div class="card-corte" data-corte="Corte CR7" data-preco="35.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Corte+CR7" alt="Corte CR7">
+          </div>
+          <p class="nome-corte">Corte CR7</p>
+          <p class="preco-corte">R$ 35,00</p>
+        </div>
+
+        <div class="card-corte" data-corte="Social Tradicional" data-preco="25.00">
+          <div class="img-box">
+            <img src="https://via.placeholder.com/150?text=Social" alt="Social Tradicional">
+          </div>
+          <p class="nome-corte">Social Tradicional</p>
+          <p class="preco-corte">R$ 25,00</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
