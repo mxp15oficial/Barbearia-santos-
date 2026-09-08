@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Barbearia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Agendar Corte de Cabelo</h1>
+    
+    <!-- Seleção de Data -->
+    <div class="field">
+      <label for="data">Escolha a data:</label>
+      <input type="date" id="data">
+    </div>
+
+    <button id="btnVerificar">Verificar Vagas</button>
+
+    <!-- Área de seleção de barbeiro (aparece se houver vaga) -->
+    <div id="areaBarbeiro" class="hidden">
+      <h3>Vaga disponível! Escolha o barbeiro:</h3>
+      <select id="selectBarbeiro">
+        <option value="Santos">Santos (Dono)</option>
+        <option value="" disabled>-- Vaga para novo barbeiro --</option>
+      </select>
+      
+      <!-- Seleção do Serviço -->
+      <h3>Escolha o serviço:</h3>
+      <select id="selectServico">
+        <option value="Corte Simples">Corte Simples</option>
+        <option value="Corte + Barba">Corte + Barba</option>
+        <option value="Barba">Barba</option>
+      </select>
+
+      <button id="btnConfirmar">Confirmar Agendamento</button>
+    </div>
+
+    <div id="mensagem"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
