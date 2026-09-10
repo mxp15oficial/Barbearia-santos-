@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #f3f4f6;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f59e0b;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-meus-agendamentos {
+  background-color: #d97706;
+  color: #fff;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+.btn-dono {
+  background-color: #374151;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-box {
+  background-color: #2a2a2a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.step-box h3 {
+  font-size: 1rem;
+  color: #f59e0b;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #121212;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.btn-cancelar {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ALERTA DE DIA CHEIO */
+.alerta-dia-cheio {
+  background-color: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.alerta-dia-cheio span {
+  display: block;
+  margin-top: 8px;
+  color: #1e40af;
+  font-size: 0.9rem;
+}
+
+/* GRID DE CORTES 2x2 */
+.grid-cortes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.corte-card {
+  background-color: #121212;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.corte-card.selected {
+  border-color: #f59e0b;
+  background-color: #261f0d;
+}
+
+.corte-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* MODAIS */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+}
