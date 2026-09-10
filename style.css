@@ -1,0 +1,277 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.app-container { 
+  max-width: 420px; 
+  width: 100%; 
+  padding: 10px;
+  padding-top: 75px;
+}
+
+/* CABEÇALHO FIXO */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  z-index: 999;
+  border-bottom: 1px solid #222;
+}
+
+.logo { font-weight: bold; font-size: 16px; color: #f59e0b; }
+
+/* BOTÕES DO TOPO */
+.app-header > div {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.btn-meus-agendamentos {
+  background: #f59e0b;
+  color: #000;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  pointer-events: auto !important;
+}
+
+.btn-dono {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.card-section {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.hidden { display: none !important; }
+
+.field { margin-bottom: 12px; }
+
+label {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+/* AJUSTE NO SELECT E INPUT DE HORÁRIO */
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  max-width: 100%;
+}
+
+input[type="time"] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* AJUSTE NATIVO DO RELÓGIO MOBILE (TIME PICKER) */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  font-size: 11px;
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+.step-box {
+  background-color: #252525;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.step-box h3 { margin-top: 0; font-size: 15px; color: #f59e0b; }
+
+.btn-primary, .btn-success {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary { background-color: #d97706; color: #fff; }
+.btn-success { background-color: #16a34a; color: #fff; margin-top: 10px; }
+
+.saudacao-box {
+  background-color: #1e293b;
+  border-left: 4px solid #f59e0b;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Grade 2x2 */
+.grid-cortes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card-corte {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-corte.selected {
+  border-color: #f59e0b;
+  background-color: #1e293b;
+}
+
+.img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #3a3a3a;
+  cursor: pointer;
+  position: relative;
+}
+
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+.tag-ver {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.nome-corte { font-size: 13px; font-weight: bold; margin: 8px 0 2px 0; }
+.preco { font-size: 13px; color: #4ade80; font-weight: bold; margin-bottom: 8px; }
+
+.btn-selecionar-corte {
+  background-color: #f59e0b;
+  color: #000;
+  border: none;
+  padding: 8px 5px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-corte.selected .btn-selecionar-corte {
+  background-color: #16a34a;
+  color: #fff;
+}
+
+/* MODAIS CORRIGIDOS E RESPONSIVOS */
+.modal {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 2000;
+  padding: 10px;
+  overflow: visible !important;
+}
+
+.modal-content {
+  background: #1e1e1e; 
+  width: 100%; 
+  max-width: 380px;
+  border-radius: 10px; 
+  padding: 20px; 
+  max-height: 85vh; 
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.modal-header, .admin-header {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px;
+}
+
+.close { font-size: 24px; cursor: pointer; color: #aaa; }
+.close:hover { color: #fff; }
+
+.sub-galeria { font-size: 12px; color: #aaa; margin: 8px 0 12px 0; }
+
+.grid-4-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.foto-item { display: flex; flex-direction: column; align-items: center; }
+.foto-item img {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: 6px; object-fit: cover; border: 1px solid #444;
+}
+.foto-item span { font-size: 11px; color: #ddd; margin-top: 4px; }
+
+/* BOTÃO CANCELAR AGENDAMENTO */
+.btn-cancelar {
+  background-color: #ef4444; color: white; border: none;
+  padding: 8px 12px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: #dc2626;
+}
+
+.item-admin-corte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
