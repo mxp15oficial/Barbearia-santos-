@@ -284,5 +284,23 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 ::-webkit-time-picker-dialog {
   transform: scale(0.65) !important;
   transform-origin: center center !important;
+
+  /* Estilo para a mensagem de dia sem horários */
+.alerta-dia-cheio {
+  background-color: #fee2e2;
+  border: 2px solid #ef4444;
+  color: #991b1b;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 10px 0;
 }
-  
+
+.alerta-dia-cheio span {
+  display: block;
+  margin-top: 8px;
+  color: #1e40af;
+  font-size: 0.95rem;
+}
